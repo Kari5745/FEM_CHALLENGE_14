@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'HanekGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf')
+        format('truetype');
+}
+
+:root{
+    /*GRADIENTS*/
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+
+    /*PRIMARY*/
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /*PRIMARY-BG*/
+    --Bg-Light-red: hsla(0, 100%, 76%, 0.111);
+    --Bg-Orangey-yellow: hsla(39, 98%, 68%, 0.197);
+    --Bg-Green-teal: hsla(166, 99%, 45%, 0.119);
+    --Bg-Cobalt-blue: hsla(234, 75%, 50%, 0.09);
+
+    /*NEUTRAL*/
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+ 
+    --ff-base: 'HankenGrotesk', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+
+    --fs-body: .9rem; /*1.125rem;*/
+    --fs-number: 4rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg{
+    display: block;
+    max-width: 100%;
+}
+
+body{
+    font-family: var(--ff-base);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-bold);
+}
+
+main{
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 46.1rem;
+    /*height: 32rem;*/
+    display: flex;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: .6rem .5rem 1rem var(--Pale-blue);
+}
+
+p{
+    font-size: var(--fs-body);
+}
+
+/*RESULT SECTION*/
+
+.upper{
+    width: 50%;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    background: linear-gradient(var(--Light-slate-blue), var(--Light-royal-blue));
+}
+
+.upper * + * {
+    margin-top: 1rem;
+}
+
+h1{
+    background: linear-gradient(var(--Violet-blue), var(--Persian-blue));
+    display: grid;
+    place-content: center;
+    width: 12rem;
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+h1 > span{
+    display: block;
+    font-size: var(--fs-900);
+}
+
+/*SUMMARY SECTION*/
+
+.lower{
+    width: 50%;
+    padding: 2.5rem;
+    color: var(--Dark-gray-blue);
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1rem;
+    padding: .7rem;
+    border-radius: .6rem;
+}
+
+.category{
+    display: flex;
+}
+
+.icon{
+    margin-right: .8rem;
+}
+
+.reaction{
+    background-color: var(--Bg-Light-red);
+}
+
+.reaction > .category{
+    color: var(--Light-red);
+}
+
+.memory{
+    background-color: var(--Bg-Orangey-yellow);
+}
+
+.memory > .category{
+    color: var(--Orangey-yellow);
+}
+
+.verbal{
+    background-color: var(--Bg-Green-teal);
+}
+
+.verbal > .category{
+    color: var(--Green-teal);
+}
+
+.visual{
+    background-color: var(--Bg-Cobalt-blue);
+}
+
+.visual > .category{
+    color: var(--Cobalt-blue);
+}
+
+button{
+    width: 100%;
+    border-radius: 6rem;
+    padding-block: 1rem;
+    border: none;
+    background-color: var(--Dark-gray-blue);
+    color: var(--Pale-blue);
+    cursor: pointer;
+}
+
+button:hover{
+    background: linear-gradient(var(--Light-slate-blue), var(--Light-royal-blue));
+}
+
+/*CLASSES*/
+
+.lavander{
+    color: var(--Light-lavender);
+}
+
+.white {
+    color: white;
+}
+
+.number{
+    font-size: var(--fs-number);
+    font-weight: var(--fw-bold);
+}
+
+.status{
+    font-size: var(--fs-600);
+    font-weight: var(--fw-bold);
+}
+
+.subtitle{
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-500);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: 100%;
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .upper{
+        width: 100%;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .lower{
+        width: 100%;
+        border-radius: none;
+    }
+}
